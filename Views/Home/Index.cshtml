@@ -1,0 +1,17 @@
+﻿@{
+	ViewBag.Title = "Início";
+	ViewBag.ActiveLink = "0";
+}
+
+<h1 class="display-1 text-center my-5">Bem vindo!</h1>
+
+<div class="h-100 p-5 text-dark bg-light rounded-top">
+	<h2>Projeto</h2>
+	<p>Um site de notícias com banco de dados em memória!</p>
+	@Html.ActionLink("Últimas Notícias", "Index", "Noticias", new { mode = "latest" }, new { @class = "btn btn-outline-dark" })
+</div>
+<div class="h-100 p-5 text-white bg-dark rounded-bottom">
+	<h2 class="text-end">Eu ;)</h2>
+	<p class="text-end">Este é apenas um projeto para a escola, de uma olhada nos meus trabalhos!</p>
+	<div class="d-flex justify-content-end"><a class="btn btn-outline-light" href="https://github.com/Beserrovsky" role="button">Meu GitHub</a></div>
+</div>

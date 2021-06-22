@@ -1,0 +1,14 @@
+﻿.body-render {
+	min-height: 75vh;
+}
+
+.link {
+	color: #0a58ca;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.link:hover {
+	color: #0a58ca;
+	text-decoration: underline!important;
+}

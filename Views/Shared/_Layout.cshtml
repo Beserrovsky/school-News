@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NewsApp</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			@Html.ActionLink("NewsApp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						@Html.ActionLink("Início", "Index", "Home", null, new Dictionary<string, object> { { "class", "nav-link" + (ViewBag.ActiveLink == "0" ? " active" : "") } })
+					</li>
+					<li class="nav-item dropdown">
+						@Html.ActionLink("Notícias", "Index", "Noticias", null, new Dictionary<string, object> { { "class", "nav-link dropdown-toggle" + (ViewBag.ActiveLink == "1" ? " active" : "") }, { "href", "#" }, { "role", "button" }, { "data-bs-toggle", "dropdown" } })
+						<ul class="dropdown-menu">
+							<li>@Html.ActionLink("Todas", "Index", "Noticias", new { id = "todas" }, new { @class = "dropdown-item" })</li>
+							<li>@Html.ActionLink("Últimas", "Index", "Noticias", new { id = "últimas" }, new { @class = "dropdown-item" })</li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						@Html.ActionLink("Criatividade", "Criatividade", "Home",null, new { @class = "nav-link" + (ViewBag.ActiveLink == "2" ? " active" : "") })
+					</li>
+					<li class="nav-item">
+						@Html.ActionLink("Aluno", "Index", "Aluno", null, new { @class = "nav-link" + (ViewBag.ActiveLink == "3" ? " active" : "") })
+					</li>
+				</ul>
+				<span class="navbar-text">
+					Desenvolvido por Felipe Beserra ;)
+				</span>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container body-content">
+		<div class="body-render mt-4">
+			@RenderBody()
+		</div>
+		<hr />
+		<footer>
+			<p>&copy;@DateTime.Now.Year Felipe Beserra  - NewsApp</p>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

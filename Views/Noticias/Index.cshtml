@@ -1,0 +1,46 @@
+﻿@{
+	ViewBag.Title = "Index";
+	ViewBag.ActiveLink = "1";
+}
+
+<h1 class="display-3 text-center my-5">Notícias@(ViewBag.Mode!=null? ": " + ViewBag.Mode : "")</h1>
+
+<div class="col-6 mx-auto">
+@{
+	foreach (News.Models.NewsModel news in ViewBag.News)
+	{
+		if (news != null)
+		{
+			<div class="card bg-light mb-3" role="button" onclick="window.location = '@Url.Action("Noticia", "Noticias", new { id = news.Id })'">
+				<div class="card-header fst-italic fw-light">
+					<div class="d-flex justify-content-between">
+						<div class="fw-normal fst-normal">
+							@Html.ActionLink(news.Category.Name, "Categoria", "Noticias", new { id = news.Category.Id }, new { @class = "text-decoration-none" })
+						</div>
+						<div>
+							@news.DateCreated.ToString("dd/MM/yyyy")
+							@Html.Raw(news.DateCreated.Date == DateTime.Now.Date ? " - <span class=\"badge bg-info fst-normal\">Hoje!</span>" : "")
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">@news.Name</h5>
+					<p class="card-text fw-light">@news.Article.Substring(0, (news.Article.Length > 35 ? 35 : news.Article.Length))...</p>
+				</div>
+			</div>
+		}
+	}
+}
+</div>
+
+<div class="col-3">
+	@{
+		foreach (News.Models.CategoryModel category in ViewBag.Categories)
+		{
+			if (category != null)
+			{
+				@Html.ActionLink(category.Name, "Index", "Noticias", new { id = category.Id})
+			}
+		}
+	}
+</div>
