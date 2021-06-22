@@ -180,7 +180,6 @@
     <Content Include="Views\Noticias\Index.cshtml" />
     <Content Include="Views\Home\Criatividade.cshtml" />
     <Content Include="Views\Noticias\Error.cshtml" />
-    <Content Include="Views\Noticias\Categoria.cshtml" />
     <Content Include="Views\Noticias\Noticia.cshtml" />
   </ItemGroup>
   <ItemGroup>

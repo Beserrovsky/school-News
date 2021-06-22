@@ -14,19 +14,20 @@ namespace News.Controllers
 
         public ActionResult Index(string id = "todas")
         {
-            ViewBag.Categories = Global.Categories;
             ViewBag.Mode = id != "todas" ? (id.Length>1? char.ToUpper(id[0]) + id.Substring(1) : id.ToUpper()) : null;
+            ViewBag.Categories = Global.Categories;
             switch (id) 
             {
                 case "últimas":
-                    int articles = Global.News.Count >= LATEST_SIZE ? LATEST_SIZE : Global.News.Count; 
-                    List<NewsModel> latestNews = Global.News.OrderByDescending(news => news.DateCreated.Date).Take(articles).ToList();
-                    ViewBag.News = latestNews;
+                    int articles = Global.News.Count >= LATEST_SIZE ? LATEST_SIZE : Global.News.Count;
+                    ViewBag.News = Global.News.OrderByDescending(news => news.DateCreated.Date).Take(articles).ToList();
                     return View();
                 case "todas":
                     ViewBag.News = Global.News;
                     return View();
             }
+
+            ViewBag.Category = Global.Categories.Find(cat => cat.Name.ToLower().Equals(id.ToLower()));
             ViewBag.News = Global.News.FindAll(news => news.Category.Name.ToLower().Equals(id.ToLower()));
             if(ViewBag.News != null) return View();
 
@@ -48,25 +49,5 @@ namespace News.Controllers
             ViewBag.Error = "Não foi provido um id para a busca por notícia!";
             return View("Error");
         }
-
-        public ActionResult Categoria(int id = -1)
-        {
-            if (id != -1)
-            {
-                CategoryModel c = Global.Categories.FirstOrDefault(cat => cat.Id.Equals(id));
-
-                if (c != null)
-                {
-                    ViewBag.NewsRelated = Global.News.FindAll(n => n.Category.Id.Equals(id));
-                    return View(c);
-                } 
-
-                ViewBag.Error = "Não há uma categoria com este id!";
-                return View("Error");
-            }
-            ViewBag.Error = "Não foi provido um id para a busca por categoria!";
-            return View("Error");
-        }
-
     }
 }

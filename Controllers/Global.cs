@@ -13,9 +13,9 @@ namespace News.Controllers
 
         public static void Init()
         {
-            Categories.Add(new CategoryModel() { Id = Categories.Count, Name = "Escola", Description = "'Blog' da escola" });             // 0
-            Categories.Add(new CategoryModel() { Id = Categories.Count, Name = "Lorem", Description = "Categoria de teste, Lorem" });     // 1
-            Categories.Add(new CategoryModel() { Id = Categories.Count, Name = "Celebridades", Description = "Os maiores babados!!!" });  // 2 
+            Categories.Add(new CategoryModel() { Name = "Escola", Description = "'Blog' da escola" });             // 0
+            Categories.Add(new CategoryModel() { Name = "Lorem", Description = "Categoria de teste, Lorem" });     // 1
+            Categories.Add(new CategoryModel() { Name = "Celebridades", Description = "Os maiores babados!!!" });  // 2 
 
             // Escola
             News.Add(new NewsModel() { Id = News.Count, Category = Categories.ElementAt(0), Name = "Jornal da escola está bombando!", DateCreated = DateTime.Now, Article = "5 dias atras criamos nosso post, e hoje já estamos recebendo diversas mensagens entusiasmadas esperando nossas histórias, fique ligado que logo logo haverá mais de nosso jornalzinho!" });

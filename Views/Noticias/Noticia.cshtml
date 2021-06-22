@@ -4,7 +4,7 @@
 }
 
 <h2>@Model.Name</h2>
-<h6 class="fw-lighter fst-italic">@Html.ActionLink(Model.Category.Name, "Categoria", "Noticias", new { id = Model.Category.Id }, new { @class="fst-normal link" }) - @Model.DateCreated.ToString()</h6>
+<h6 class="fw-lighter fst-italic">@Html.ActionLink(Model.Category.Name, "Index", "Noticias", new { id = Model.Category.Name }, new { @class="fst-normal link" }) - @Model.DateCreated.ToString()</h6>
 
 <div class="mt-5 col-11 mx-auto">
     <span style="white-space: pre-line">@Model.Article</span>
