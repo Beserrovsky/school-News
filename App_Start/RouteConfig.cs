@@ -1,4 +1,5 @@
 ﻿using News.Controllers;
+using News.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,13 @@ namespace News
 			Global.Init();
 
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+			routes.MapRoute(
+				name: "Noticias",
+				url: "Noticias/{id}",
+				defaults: new { controller = "Noticias", action = "Index" }
+			);
+
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",

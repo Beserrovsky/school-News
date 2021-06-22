@@ -22,15 +22,15 @@
 					<li class="nav-item dropdown">
 						@Html.ActionLink("Notícias", "Index", "Noticias", null, new Dictionary<string, object> { { "class", "nav-link dropdown-toggle" + (ViewBag.ActiveLink == "1" ? " active" : "") }, { "href", "#" }, { "role", "button" }, { "data-bs-toggle", "dropdown" } })
 						<ul class="dropdown-menu">
-							<li>@Html.ActionLink("Todas", "Index", "Noticias", new { id = "todas" }, new { @class = "dropdown-item" })</li>
-							<li>@Html.ActionLink("Últimas", "Index", "Noticias", new { id = "últimas" }, new { @class = "dropdown-item" })</li>
+							<li>@Html.ActionLink("Todas", "Index", "Noticias", new { id = "Todas" }, new { @class = "dropdown-item" })</li>
+							<li>@Html.ActionLink("Últimas", "Index", "Noticias", new { id = "Últimas" }, new { @class = "dropdown-item" })</li>
 						</ul>
 					</li>
 					<li class="nav-item">
 						@Html.ActionLink("Criatividade", "Criatividade", "Home",null, new { @class = "nav-link" + (ViewBag.ActiveLink == "2" ? " active" : "") })
 					</li>
 					<li class="nav-item">
-						@Html.ActionLink("Aluno", "Index", "Aluno", null, new { @class = "nav-link" + (ViewBag.ActiveLink == "3" ? " active" : "") })
+						@Html.ActionLink("Aluno", "Aluno", "Aluno", null, new { @class = "nav-link" + (ViewBag.ActiveLink == "3" ? " active" : "") })
 					</li>
 				</ul>
 				<span class="navbar-text">

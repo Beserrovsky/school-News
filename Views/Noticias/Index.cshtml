@@ -49,11 +49,12 @@
 				if (ViewBag.Categories != null)
 				{
 					<h1 class="display-6 text-center mb-5">Categorias</h1>
+					<li class="text-center">@Html.ActionLink("Todas", "Index", "Noticias", new { id = "Todas" }, new { @class = "link" })</li>
 					foreach (News.Models.CategoryModel category in ViewBag.Categories)
 					{
 						if (category != null)
 						{
-							<li class="text-center">@Html.ActionLink(category.Name, "Index", "Noticias", new { id = category.Name }, new { @class="link" })</li>
+							<li class="text-center">@Html.ActionLink(category.Name, "Index", "Noticias", new { id = category.Name }, new { @class = "link" })</li>
 						}
 					}
 				}

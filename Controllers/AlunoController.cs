@@ -4,9 +4,9 @@ namespace News.Controllers
 {
     public class AlunoController : Controller
     {
-        public string Index()
+        public PartialViewResult Aluno()
         {
-            return "TODO";
+            return PartialView("~/Areas/Aluno/Aluno.cshtml");
         }
     }
 }

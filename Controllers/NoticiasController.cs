@@ -1,4 +1,5 @@
 ﻿using News.Models;
+using News.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ namespace News.Controllers
 
         public ActionResult Index(string id = "todas")
         {
-            ViewBag.Mode = id != "todas" ? (id.Length>1? char.ToUpper(id[0]) + id.Substring(1) : id.ToUpper()) : null;
+            ViewBag.Mode = id.ToLower() != "todas" ? (id.Length>1? char.ToUpper(id[0]) + id.Substring(1) : id.ToUpper()) : null;
             ViewBag.Categories = Global.Categories;
-            switch (id) 
+            switch (id.ToLower()) 
             {
                 case "últimas":
                     int articles = Global.News.Count >= LATEST_SIZE ? LATEST_SIZE : Global.News.Count;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace News.Controllers
+namespace News.Data
 {
 	public static class Global
 	{
