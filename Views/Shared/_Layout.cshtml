@@ -30,7 +30,7 @@
 						@Html.ActionLink("Criatividade", "Criatividade", "Home",null, new { @class = "nav-link" + (ViewBag.ActiveLink == "2" ? " active" : "") })
 					</li>
 					<li class="nav-item">
-						@Html.ActionLink("Aluno", "Aluno", "Aluno", null, new { @class = "nav-link" + (ViewBag.ActiveLink == "3" ? " active" : "") })
+						@Html.ActionLink("Aluno", "Index", "Aluno", new { area = "Aluno" }, new { @class = "nav-link" + (ViewBag.ActiveLink == "3" ? " active" : "") })
 					</li>
 				</ul>
 				<span class="navbar-text">

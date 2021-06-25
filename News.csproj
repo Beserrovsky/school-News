@@ -115,12 +115,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Aluno\AlunoAreaRegistration.cs" />
+    <Compile Include="Areas\Aluno\Controllers\AlunoController.cs" />
     <Compile Include="Data\Global.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
-    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,7 +156,8 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Aluno\Aluno.cshtml" />
+    <Content Include="Areas\Aluno\Views\web.config" />
+    <Content Include="Areas\Aluno\Views\Aluno\Index.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -185,6 +188,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Aluno\Data\" />
+    <Folder Include="Areas\Aluno\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

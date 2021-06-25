@@ -13,10 +13,9 @@ namespace News
 	{
 		public static void RegisterRoutes(RouteCollection routes)
 		{
-			// Start Global data 
-			Global.Init();
-
+			
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+			
 
 			routes.MapRoute(
 				name: "Noticias",
